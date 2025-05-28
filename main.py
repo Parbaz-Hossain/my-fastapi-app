@@ -45,6 +45,6 @@ app.include_router(scm_router, prefix="/scm", tags=["SCM Module"])
 # app.include_router(user_router, prefix="/users", tags=["User Module"])
 
 
-@app.get("/", response_class=FileResponse, tags=["Static Files"])
-async def serve_index():
-    return FileResponse("app/static/index.html")
+# @app.get("/", response_class=FileResponse, tags=["Static Files"])
+# async def serve_index():
+#     return FileResponse("app/static/index.html")

@@ -1,7 +1,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker 
-from config.config import SQLALCHEMY_DATABASE_URL
+#from config.config import SQLALCHEMY_DATABASE_URL
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .env
+
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+if not SQLALCHEMY_DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set")
 
 # PostgreSQL database URL
 ## SQLALCHEMY_DATABASE_URL = "postgresql://postgres:post%40%2312%2A%2A@localhost:5432/KnowledgeBaseAIDB"
